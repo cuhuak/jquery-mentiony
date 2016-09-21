@@ -248,6 +248,8 @@ var tmpEle = null;
                 keyup:    false,
             };
 
+            // fix for FF
+            e.keyCode = e.charCode || e.which || e.keyCode;
 
             if (dropDownShowing) {
                 return handleUserChooseOption(e);
