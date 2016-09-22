@@ -268,7 +268,11 @@ var tmpEle = null;
 
             if (!needMention) {
                 // Try to check if need mention
-                needMention = (e.keyCode === KEY.AT);
+
+                var charCode = e.charCode || e.which || e.keyCode;
+                var char = String.fromCharCode(charCode);
+
+                needMention = (char === settings.triggerChar);
                 // log(needMention, 'needMention', 'info');
             }
 
